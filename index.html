@@ -657,6 +657,80 @@
     display: block;
   }
 
+  /* ── LOGOS STRIP ── */
+  #logos {
+    padding: 48px 48px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .logos-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-right: 48px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .logos-list {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .logo-item {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--rule);
+    letter-spacing: -0.3px;
+    transition: color 0.3s;
+    white-space: nowrap;
+  }
+  .logo-item:hover { color: var(--mid); }
+  .logo-item.logo-block { font-size: 22px; letter-spacing: -1px; }
+  .logo-item.logo-revolut { font-size: 18px; letter-spacing: 1px; font-style: italic; }
+  .logo-item.logo-bitmex { font-size: 16px; letter-spacing: 2px; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+  .logo-item.logo-edelman { font-size: 19px; letter-spacing: -0.5px; }
+
+  /* ── PULLQUOTE ── */
+  .about-pullquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--ink);
+    padding: 40px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin: 48px 0 0;
+    position: relative;
+  }
+  .about-pullquote::before {
+    content: '"';
+    font-size: 80px;
+    line-height: 1;
+    color: var(--accent);
+    font-family: 'Playfair Display', serif;
+    display: block;
+    margin-bottom: -16px;
+    opacity: 0.4;
+  }
+
+  @media (max-width: 768px) {
+    #logos { padding: 36px 24px; gap: 24px; }
+    .logos-label { margin-right: 0; margin-bottom: 16px; flex-basis: 100%; }
+    .logos-list { gap: 28px; }
+    .logo-item { font-size: 16px; }
+    .logo-item.logo-block { font-size: 18px; }
+    .about-pullquote { font-size: clamp(20px, 5vw, 26px); }
+  }
+
   /* ── ANIMATIONS ── */
   .fade-up {
     opacity: 0;
@@ -740,6 +814,7 @@
       <p>I specialise in the intersection of financial technology and trust — the moment when a complex, unfamiliar, or scrutinised product needs to become something a journalist will care about, a regulator will take seriously, and a customer will truly believe in.</p>
       <p>Based in Barcelona. Working globally.</p>
     </div>
+    <p class="about-pullquote">Every complex product has a story that earns trust. The job is finding it — and making sure the right people hear it.</p>
   </div>
   <div class="about-right">
     <blockquote class="about-quote">"The details aren't in the stories. The stories are in the details."</blockquote>
@@ -753,6 +828,17 @@
       <div class="skill-item">Data-Led Campaigns</div>
       <div class="skill-item">Regulatory Affairs</div>
     </div>
+  </div>
+</section>
+
+<!-- LOGOS STRIP -->
+<section id="logos">
+  <span class="logos-label">Experience</span>
+  <div class="logos-list">
+    <span class="logo-item logo-block">Block</span>
+    <span class="logo-item logo-revolut">Revolut</span>
+    <span class="logo-item logo-bitmex">BitMEX</span>
+    <span class="logo-item logo-edelman">Edelman</span>
   </div>
 </section>
 
