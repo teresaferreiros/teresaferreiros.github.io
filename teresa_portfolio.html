@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teresa Ferreirós — Global Communications Leader</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --cream: #FAF8F4;
+    --ink: #0D0D0D;
+    --accent: #C8773A;
+    --mid: #6B6B6B;
+    --rule: #E2DDD7;
+    --highlight: #F5F0E8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mid);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 48px 80px;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 8vw, 108px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    max-width: 900px;
+    margin-bottom: 40px;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.6;
+    max-width: 520px;
+    margin-bottom: 48px;
+  }
+
+  .hero-meta {
+    display: flex; gap: 48px; align-items: center;
+  }
+
+  .hero-stat {
+    display: flex; flex-direction: column; gap: 4px;
+  }
+
+  .hero-stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+
+  .hero-stat-label {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  .hero-divider {
+    width: 1px; height: 48px;
+    background: var(--rule);
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 80px; right: 48px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid);
+    writing-mode: vertical-rl;
+    display: flex; align-items: center; gap: 12px;
+  }
+
+  .hero-scroll::before {
+    content: '';
+    display: block;
+    width: 1px; height: 60px;
+    background: var(--mid);
+  }
+
+  /* ── SECTION WRAPPER ── */
+  section { padding: 100px 48px; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin-bottom: 60px;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-left .section-title { margin-bottom: 32px; }
+
+  .about-body {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #2a2a2a;
+  }
+
+  .about-body p + p { margin-top: 20px; }
+
+  .about-right { padding-top: 80px; }
+
+  .about-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink);
+    border-left: 3px solid var(--accent);
+    padding-left: 28px;
+    margin-bottom: 48px;
+  }
+
+  .skills-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+
+  .skill-item {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+    color: var(--ink);
+  }
+
+  /* ── TIMELINE ── */
+  #timeline { border-bottom: 1px solid var(--rule); }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+  }
+
+  .timeline-item {
+    display: contents;
+  }
+
+  .timeline-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--mid);
+    padding: 32px 40px 32px 0;
+    border-top: 1px solid var(--rule);
+    align-self: start;
+  }
+
+  .timeline-content {
+    padding: 32px 0 32px 40px;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+
+  .timeline-company {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .timeline-role {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .timeline-desc {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: #3a3a3a;
+    max-width: 640px;
+  }
+
+  /* ── CASE STUDIES ── */
+  #work { border-bottom: 1px solid var(--rule); }
+
+  .case-studies { display: flex; flex-direction: column; gap: 0; }
+
+  .case-study {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    gap: 0 60px;
+    padding: 60px 0;
+    border-top: 1px solid var(--rule);
+    transition: background 0.3s;
+  }
+
+  .case-study:hover { background: var(--highlight); margin: 0 -48px; padding: 60px 48px; }
+
+  .case-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--rule);
+    line-height: 1;
+    letter-spacing: -2px;
+    align-self: start;
+  }
+
+  .case-left { align-self: start; }
+
+  .case-company {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .case-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .case-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .case-tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border: 1px solid var(--rule);
+    color: var(--mid);
+  }
+
+  .case-right { align-self: start; padding-top: 4px; }
+
+  .case-challenge-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  .case-text {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #2a2a2a;
+    margin-bottom: 28px;
+  }
+
+  .case-result {
+    display: flex; gap: 40px;
+  }
+
+  .result-stat { display: flex; flex-direction: column; gap: 4px; }
+
+  .result-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--ink);
+  }
+
+  .result-label {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: var(--mid);
+  }
+
+  /* ── PRESS ── */
+  #press { border-bottom: 1px solid var(--rule); }
+
+  .press-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+    margin-bottom: 60px;
+  }
+
+  .press-logo-item {
+    flex: 0 0 calc(100% / 4);
+    padding: 40px 32px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .press-logo-item:hover { background: var(--highlight); }
+  a.press-logo-item { cursor: pointer; text-decoration: none; }
+  a.press-logo-item:hover .press-logo-text { color: var(--accent); }
+
+  .press-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--mid);
+    letter-spacing: -0.3px;
+    transition: color 0.2s;
+  }
+  .press-logo-icon {
+    display: block;
+    margin-bottom: 10px;
+    opacity: 0.45;
+    transition: opacity 0.2s;
+    width: 32px;
+    height: 32px;
+  }
+  .press-logo-item:hover .press-logo-icon { opacity: 0.7; }
+
+  .press-logo-item:hover .press-logo-text { color: var(--ink); }
+
+  /* ── EVENTS ── */
+  #events { border-bottom: 1px solid var(--rule); }
+
+  .speaking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+
+  .speaking-item {
+    padding: 40px 32px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .speaking-event {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 8px;
+  }
+
+  .speaking-detail {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+  .event-photo {
+    width: calc(100% + 64px);
+    margin: -40px -32px 24px;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+  .event-photo-placeholder {
+    width: calc(100% + 64px);
+    margin: -40px -32px 24px;
+    height: 220px;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .event-photo-placeholder span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(250,248,244,0.3);
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .contact-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.0;
+  }
+
+  .contact-headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .contact-right { padding-top: 20px; }
+
+  .contact-intro {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #3a3a3a;
+    margin-bottom: 40px;
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 16px; }
+
+  .contact-link {
+    display: flex; align-items: center; gap: 16px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 20px 0;
+    border-top: 1px solid var(--rule);
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover { color: var(--accent); }
+
+  .contact-link-arrow {
+    margin-left: auto;
+    font-size: 20px;
+    transition: transform 0.2s;
+  }
+
+  .contact-link:hover .contact-link-arrow { transform: translate(4px, -4px); }
+
+  /* ── MEDIA GRID ── */
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    border-top: 1px solid var(--rule);
+    padding-top: 48px;
+  }
+
+  .media-card { display: flex; flex-direction: column; gap: 16px; }
+
+  .media-embed {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: var(--ink);
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+  }
+  .media-embed-thumb {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s;
+  }
+  .media-embed:hover .media-embed-thumb { opacity: 0.8; }
+  .media-play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px; height: 64px;
+    background: rgba(250,248,244,0.92);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+    pointer-events: none;
+  }
+  .media-embed:hover .media-play {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--cream);
+  }
+  .media-play-icon {
+    width: 0; height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 20px solid var(--ink);
+    margin-left: 4px;
+  }
+
+
+  .media-outlet {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .media-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+
+  /* ── MEDIA EXTRAS ── */
+  .media-extras {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .media-link-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px 24px;
+    border: 1px solid var(--rule);
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .media-link-card:hover {
+    background: var(--highlight);
+    border-color: var(--accent);
+  }
+
+  .media-link-outlet {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .media-link-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 32px 48px;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--mid);
+  }
+
+  /* ── CASE PHOTO ── */
+  .case-photo {
+    width: 100%;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .case-photo img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 0 24px 60px; }
+    section { padding: 60px 24px; }
+    #about, #contact { grid-template-columns: 1fr; gap: 40px; }
+    .about-right { padding-top: 0; }
+    .timeline-grid { grid-template-columns: 1fr; }
+    .timeline-date { border-top: none; padding: 0 0 8px; }
+    .timeline-content { border-left: none; padding: 0 0 32px 20px; border-left: 3px solid var(--accent); }
+    .case-study { grid-template-columns: 1fr; gap: 20px; }
+    .case-number { font-size: 36px; }
+    .press-logo-item { flex: 0 0 calc(100% / 2); }
+    .events-grid { grid-template-columns: 1fr; }
+    .media-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-name">Teresa Ferreirós Criado</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#timeline">Career</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#press">Press</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#media">Media</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Global Communications Leader</div>
+  <h1 class="hero-headline">Building<br>trust in<br><em>complex</em><br>technology.</h1>
+  <p class="hero-sub">18 years translating bitcoin, fintech, and financial innovation into narratives that land — with media, regulators, partners, and global audiences.</p>
+  <div class="hero-meta">
+    <div class="hero-stat">
+      <span class="hero-stat-number">18+</span>
+      <span class="hero-stat-label">Years experience</span>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-number">10+</span>
+      <span class="hero-stat-label">Markets led</span>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-number">4</span>
+      <span class="hero-stat-label">Continents</span>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-left">
+    <div class="section-label">About</div>
+    <h2 class="section-title">The story<br>behind the<br>stories.</h2>
+    <div class="about-body">
+      <p>I started as a journalist — which means I learned early that complexity is not an excuse for confusion, and that every story worth telling has a human at its centre.</p>
+      <p>After a decade advising companies at Edelman, I moved in-house to do the same work with more skin in the game. Revolut during European expansion. BitMEX during one of its hardest years. Block, building trust for bitcoin products that had never existed before.</p>
+      <p>I specialise in the intersection of financial technology and trust — the moment when a complex, unfamiliar, or scrutinised product needs to become something a journalist will care about, a regulator will take seriously, and a customer will truly believe in.</p>
+      <p>Based in Barcelona. Working globally.</p>
+    </div>
+  </div>
+  <div class="about-right">
+    <blockquote class="about-quote">"The details aren't in the stories. The stories are in the details."</blockquote>
+    <div class="skills-grid">
+      <div class="skill-item">Global Media Strategy</div>
+      <div class="skill-item">Executive Positioning</div>
+      <div class="skill-item">Crisis Communications</div>
+      <div class="skill-item">Narrative Development</div>
+      <div class="skill-item">Bitcoin & Crypto</div>
+      <div class="skill-item">Fintech & Payments</div>
+      <div class="skill-item">Data-Led Campaigns</div>
+      <div class="skill-item">Regulatory Affairs</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-label">Career</div>
+  <h2 class="section-title">The path<br>to here.</h2>
+  <div class="timeline-grid">
+    <div class="timeline-item">
+      <div class="timeline-date">2023 — 2026</div>
+      <div class="timeline-content">
+        <div class="timeline-company">Block</div>
+        <div class="timeline-role">Head of Communications — Bitkey & Proto</div>
+        <p class="timeline-desc">Led global communications for Block's bitcoin self-custody wallet (Bitkey) and bitcoin mining suite of products (Proto). Built the launch strategy, international media programme, and executed a full repositioning of Bitkey to bitcoin-native audiences.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2022</div>
+      <div class="timeline-content">
+        <div class="timeline-company">BitMEX</div>
+        <div class="timeline-role">Global PR & Communications Director</div>
+        <p class="timeline-desc">Rebuilt global communications during a period of active legal exposure. Increased media visibility by 50% while managing crisis communications and repositioning the brand toward retail users and European markets.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2020 — 2022</div>
+      <div class="timeline-content">
+        <div class="timeline-company">Revolut</div>
+        <div class="timeline-role">Head of Communications — Spain & Portugal</div>
+        <p class="timeline-desc">Led communications strategy across Spain, Portugal, and Mexico during rapid international expansion. Established Revolut's voice in Spanish media through data-led campaigns and high-visibility product and regulatory launches.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2009 — 2020</div>
+      <div class="timeline-content">
+        <div class="timeline-company">Edelman</div>
+        <div class="timeline-role">Senior Account Manager</div>
+        <p class="timeline-desc">Over a decade advising companies including PayPal, LinkedIn, and Euronext on media strategy, reputation, and crisis communications across European markets.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2006 — 2009</div>
+      <div class="timeline-content">
+        <div class="timeline-company">Diario Expansión</div>
+        <div class="timeline-role">Journalist</div>
+        <p class="timeline-desc">Business journalist specialising in financial services, media, and marketing. Where the craft of clear, credible storytelling began.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK / CASE STUDIES -->
+<section id="work">
+  <div class="section-label">Selected Work</div>
+  <h2 class="section-title">Three moments<br>that defined<br>the work.</h2>
+  <div class="case-studies">
+
+    <!-- Case 1 -->
+    <div class="case-study fade-up">
+      <div class="case-number">01</div>
+      <div class="case-left">
+        <div class="case-company">Block — Bitkey & Proto</div>
+        <h3 class="case-title">Two launches. One complete narrative pivot. New territory for bitcoin hardware.</h3>
+        <div class="case-tags">
+          <span class="case-tag">Product Launch</span>
+          <span class="case-tag">Bitcoin</span>
+          <span class="case-tag">Global Markets</span>
+          <span class="case-tag">Narrative Pivot</span>
+          <span class="case-tag">Mining Hardware</span>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="case-challenge-label">The challenge</div>
+        <p class="case-text">Bitkey launched in March 2024 aimed at mainstream audiences. A year in, the data told a different story: mainstream wasn't that ready for self-custody, but bitcoin-native users — people who already used Ledger, Trezor, Casa, or Unchained — were, and deserved a product like Bitkey. The entire communications strategy, product roadmap, and channel mix had to shift within a few weeks. Simultaneously, leading the global launch of Proto Rig in August 2025 — Block's first modular bitcoin mining hardware, challenging Bitmain's decade-long dominance, and changing the narrative around bitcoin mining through a proprietary content and case study programme spanning media, policy makers, and social channels.</p>
+        <div class="case-challenge-label">The outcome</div>
+        <p class="case-text">The Bitkey pivot delivered: podcast coverage across What Bitcoin Did, Bitcoin Magazine, The Mining Pod, and Bitcoin News drove deep ecosystem engagement in Q4 2025. The brand and team were also present at every major bitcoin-focused event across the US, Europe and EMEA, engaging directly with customers and stakeholders to educate about a new way of owning bitcoin.</p>
+        <div class="case-challenge-label" style="margin-top:28px;">Content &amp; editorial</div>
+        <p class="case-text">Collaborated on a proprietary content programme for Proto — the <em>Possible Futures</em> case study series on <a href="https://proto.xyz/blog" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">proto.xyz/blog</a> — selecting angles, shaping narratives, and driving distribution to media, policy makers, and regulators. Contributed to the <a href="https://bitkey.build" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">bitkey.build</a> editorial blog, translating product philosophy into content that earned coverage and built ecosystem trust.</p>
+        <div class="case-challenge-label" style="margin-top:28px;">The outcome</div>
+        <p class="case-text">The Proto launch — held at Core Scientific's facility in Dalton, GA, with Jack Dorsey in attendance — generated widespread international coverage across Bitcoin Magazine, PYMNTS, Fortune, Nasdaq, and the global mining press.</p>
+      </div>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="case-study fade-up">
+      <div class="case-number">02</div>
+      <div class="case-left">
+        <div class="case-company">Revolut — Spain & Portugal</div>
+        <h3 class="case-title">Building a brand from zero — with data as the story and culture as the hook.</h3>
+        <div class="case-tags">
+          <span class="case-tag">Market Entry</span>
+          <span class="case-tag">Data Campaigns</span>
+          <span class="case-tag">Fintech</span>
+          <span class="case-tag">Spain & Portugal</span>
+          <span class="case-tag">Cultural Campaigns</span>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="case-challenge-label">The challenge</div>
+        <p class="case-text">Establish Revolut's voice in Spain — a market where the brand was completely unknown — during one of Europe's most rapid fintech expansions. From 2 to 200 employees in Spain during my time. Build media presence from scratch while supporting product launches, regulatory milestones, and executive positioning simultaneously. Contribute to the global crypto narrative for the brand, and to the Learn & Earn educational platform.</p>
+        <div class="case-challenge-label">The outcome</div>
+        <p class="case-text">Consistent coverage across Spain's leading business and financial media, driven by proprietary spending data campaigns that generated original story angles where none existed. The Pride cards campaign — an advocacy and product moment tying a customised Pride debit card to Revolut's values — landed regionally and became one of the highest-visibility brand moments of the year. Later led interim communications for Portugal and expansion into Mexico.</p>
+      </div>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="case-study fade-up">
+      <div class="case-number">03</div>
+      <div class="case-left">
+        <div class="case-company">BitMEX</div>
+        <h3 class="case-title">Rebuilding a reputation under active legal exposure — and growing visibility by 50%.</h3>
+        <div class="case-tags">
+          <span class="case-tag">Crisis Communications</span>
+          <span class="case-tag">Crypto</span>
+          <span class="case-tag">EMEA & APAC</span>
+          <span class="case-tag">Executive Positioning</span>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="case-challenge-label">The challenge</div>
+        <p class="case-text">Lead global communications for a crypto exchange facing founder-related legal proceedings — simultaneously repositioning the brand toward retail users and European markets, and maintaining media relationships under sustained scrutiny.</p>
+        <div class="case-challenge-label">The outcome</div>
+        <div class="case-result">
+          <div class="result-stat">
+            <span class="result-number">+50%</span>
+            <span class="result-label">Media visibility</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-number">20+</span>
+            <span class="result-label">CEO interviews placed</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-number">10</span>
+            <span class="result-label">Markets covered</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRESS -->
+<section id="press">
+  <div class="section-label">Press</div>
+  <h2 class="section-title">Coverage that<br>mattered.</h2>
+  <div class="press-logos">
+    <a href="https://www.bloomberg.com/news/articles/2023-12-07/jack-dorsey-s-block-sq-furthers-bitcoin-foray-with-new-hardware-wallet" target="_blank" class="press-logo-item" rel="noopener">
+      <span class="press-logo-text">Bloomberg</span>
+    </a>
+    <a href="https://fortune.com/crypto/2023/12/07/jack-dorseys-block-bitkey-preorders-live-95-countries-bitcoin-hardware-wallet/" target="_blank" class="press-logo-item" rel="noopener">
+      <span class="press-logo-text">Fortune</span>
+    </a>
+    <a href="https://www.cnbc.com/2025/02/26/blocks-bitkey-rolls-out-fix-for-bitcoin-inheritance-problem.html" target="_blank" class="press-logo-item" rel="noopener">
+      <span class="press-logo-text">CNBC</span>
+    </a>
+    <div class="press-logo-item">
+      <span class="press-logo-text">Associated Press</span>
+    </div>
+    <a href="https://bitcoinmagazine.com/bitcoin-mining/block-inc-launches-proto-rig-modular-bitcoin-miner-challenging-bitmains-dominance" target="_blank" class="press-logo-item" rel="noopener">
+      <span class="press-logo-text">Bitcoin Magazine</span>
+    </a>
+    <div class="press-logo-item">
+      <span class="press-logo-text">What Bitcoin Did</span>
+    </div>
+    <div class="press-logo-item">
+      <span class="press-logo-text">The Mining Pod</span>
+    </div>
+    <div class="press-logo-item">
+      <span class="press-logo-text">Bitcoin News</span>
+    </div>
+    <a href="https://finance.yahoo.com/news/block-8217-proto-unveils-rig-194542376.html" target="_blank" class="press-logo-item" rel="noopener">
+      <span class="press-logo-text">Yahoo Finance</span>
+    </a>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" style="border-bottom: 1px solid var(--rule);">
+  <div class="section-label">Events</div>
+  <h2 class="section-title">In the room<br>where it<br>happens.</h2>
+  <div class="speaking-grid">
+
+    <div class="speaking-item fade-up">
+      <img src="BTC_LV_2.jpg" alt="Bitcoin Las Vegas 2025 — Bitkey booth" class="event-photo" />
+      <div class="speaking-event">Bitcoin Las Vegas 2025</div>
+      <div class="speaking-detail">Booth activations and media moments representing Bitkey at the world's largest bitcoin conference. Will Paul (Block) on the Made in America: Policy Advancements panel. Jonathan Pollack interviewed live at the Bitkey booth.</div>
+    </div>
+
+    <div class="speaking-item fade-up">
+      <img src="BTC_Prague.jpg" alt="Bitcoin Prague 2025 — main stage" class="event-photo" style="object-position: center 60%;" />
+      <div class="speaking-event">Bitcoin Prague 2025</div>
+      <div class="speaking-detail">European flagship bitcoin conference — product presence and ecosystem storytelling across the bitcoin-native community. Main stage panel with the iconic Bitcoin backdrop, June 2025.</div>
+    </div>
+
+    <div class="speaking-item fade-up">
+      <img src="BTC_MENA.jpg" alt="Bitcoin MENA — Abu Dhabi 2025" class="event-photo" />
+      <div class="speaking-event">Bitcoin MENA — Abu Dhabi</div>
+      <div class="speaking-detail">Regional presence and ecosystem engagement across the Middle East and North Africa bitcoin community. Bitkey sponsorship and brand presence at the Abu Dhabi venue, December 2025.</div>
+    </div>
+
+    <div class="speaking-item fade-up">
+      <img src="Proto_Rig_launch.webp" alt="Proto Rig Launch — Block, August 2025" class="event-photo" />
+      <div class="speaking-event">Proto Rig Launch</div>
+      <div class="speaking-detail">Led communications for Block's historic Proto hardware launch at Core Scientific's facility, Dalton GA — August 2025. Jack Dorsey in attendance.</div>
+    </div>
+
+    <div class="speaking-item fade-up">
+      <div class="event-photo-placeholder" style="background:#0d0d0d;">
+        <span style="color:rgba(250,248,244,0.25);letter-spacing:3px;font-size:10px;">TOKEN2049 · SINGAPORE 2022</span>
+      </div>
+      <div class="speaking-event">Token2049 — Singapore</div>
+      <div class="speaking-detail">Title sponsor presence and executive positioning at crypto's flagship Asia conference — representing BitMEX as a title partner during the firm's brand repositioning, September 2022.</div>
+    </div>
+
+    <div class="speaking-item fade-up">
+      <div class="event-photo-placeholder" style="background:#0d0d0d;">
+        <span style="color:rgba(250,248,244,0.25);letter-spacing:3px;font-size:10px;">BITCOIN AMSTERDAM</span>
+      </div>
+      <div class="speaking-event">Bitcoin Amsterdam</div>
+      <div class="speaking-detail">Brand and executive visibility in one of Europe's most important bitcoin gatherings.</div>
+    </div>
+
+  </div>
+</section>
+<!-- LISTEN & WATCH -->
+<section id="media" style="border-bottom: 1px solid var(--rule);">
+  <div class="section-label">Listen & Watch</div>
+  <h2 class="section-title">The work,<br>in their<br>own words.</h2>
+  <div class="media-grid">
+
+    <div class="media-card fade-up">
+      <a href="https://www.youtube.com/watch?v=4ErTj6miFHA" target="_blank" class="media-embed" rel="noopener">
+        <img class="media-embed-thumb" src="https://img.youtube.com/vi/4ErTj6miFHA/hqdefault.jpg" alt="What Bitcoin Did — Max Guise" />
+        <div class="media-play"><div class="media-play-icon"></div></div>
+      </a>
+      <div class="media-info">
+        <div class="media-outlet">What Bitcoin Did</div>
+        <div class="media-title">Bitcoin Products & ASICs — Max Guise, Block</div>
+      </div>
+    </div>
+
+    <div class="media-card fade-up">
+      <a href="https://www.youtube.com/watch?v=bOHFOT0xBZs" target="_blank" class="media-embed" rel="noopener">
+        <img class="media-embed-thumb" src="https://img.youtube.com/vi/bOHFOT0xBZs/hqdefault.jpg" alt="Bitcoin News — Max Guise" />
+        <div class="media-play"><div class="media-play-icon"></div></div>
+      </a>
+      <div class="media-info">
+        <div class="media-outlet">Bitcoin News</div>
+        <div class="media-title">Max Guise on Bitkey & Proto — Bitcoin News Interview</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="media-extras">
+    <a href="https://x.com/i/status/1956724475145113604" target="_blank" class="media-link-card">
+      <div class="media-link-outlet">The Mining Pod × Proto</div>
+      <div class="media-link-title">Perry Hothi on Proto Rig — Extended X thread ↗</div>
+    </a>
+    <a href="https://open.spotify.com/episode/6GTmdZb1sSR9wGjw5hFSGM" target="_blank" class="media-link-card">
+      <div class="media-link-outlet">The Mining Pod</div>
+      <div class="media-link-title">Block's Proto ASIC with Max Guise — Spotify ↗</div>
+    </a>
+  </div>
+
+  <div class="media-grid" style="margin-top:40px; border-top: none;">
+    <div class="media-card fade-up">
+      <a href="https://www.youtube.com/watch?v=yJbalP0R3zE" target="_blank" class="media-embed" rel="noopener">
+        <img class="media-embed-thumb" src="https://img.youtube.com/vi/yJbalP0R3zE/hqdefault.jpg" alt="Proto Rig Launch Keynote" />
+        <div class="media-play"><div class="media-play-icon"></div></div>
+      </a>
+      <div class="media-info">
+        <div class="media-outlet">Proto</div>
+        <div class="media-title">Proto Rig Launch Keynote — August 2025</div>
+      </div>
+    </div>
+
+    <div class="media-card fade-up">
+      <a href="https://www.youtube.com/watch?v=T515KWpqVOc" target="_blank" class="media-embed" rel="noopener">
+        <img class="media-embed-thumb" src="https://img.youtube.com/vi/T515KWpqVOc/hqdefault.jpg" alt="The Mining Pod — Perry Hothi" />
+        <div class="media-play"><div class="media-play-icon"></div></div>
+      </a>
+      <div class="media-info">
+        <div class="media-outlet">The Mining Pod</div>
+        <div class="media-title">Perry Hothi on Proto Rig — The Mining Pod</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+  <div>
+    <h2 class="contact-headline">Every story<br>worth telling<br>starts with a<br><em>conversation.</em></h2>
+  </div>
+  <div class="contact-right">
+    <p class="contact-intro">I'm currently open to senior communications leadership roles in fintech, bitcoin, crypto, stablecoins, payments, and broader tech. Remote, global.</p>
+    <div class="contact-links">
+      <a href="mailto:tferreiros@gmail.com" class="contact-link">
+        tferreiros@gmail.com
+        <span class="contact-link-arrow">↗</span>
+      </a>
+      <a href="tel:+34651732301" class="contact-link">
+        +34 651 732 301
+        <span class="contact-link-arrow">↗</span>
+      </a>
+      <a href="https://linkedin.com/in/teresaferreiros" target="_blank" class="contact-link">
+        LinkedIn
+        <span class="contact-link-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Teresa Ferreirós Criado</div>
+  <div class="footer-copy">Global Communications Leader · Barcelona</div>
+</footer>
+
+<script>
+  // Fade up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
