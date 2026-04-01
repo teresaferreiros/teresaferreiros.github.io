@@ -1,6 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#000000"></rect>
-  <text x="50%" y="54%" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="600" fill="#EAE6DC" letter-spacing="-1">
+  <!-- transparent background -->
+  
+  <!-- circle -->
+  <circle cx="32" cy="32" r="30" fill="#000000"></circle>
+
+  <!-- text -->
+  <text x="50%" y="54%" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#EAE6DC" letter-spacing="-1">
     TF
   </text>
 </svg>
